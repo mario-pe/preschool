@@ -22,13 +22,12 @@ public class EditServlet extends HttpServlet {
         response.setContentType("text/plain;charset=utf-8");
         String id = request.getParameter("id");
 
-
         String action = request.getParameter("action");
 //        int id = 1;
         if (action.equals("delete")) {
-            PersonDao cd = (PersonDao) getServletContext().getAttribute("personDao");
+            PersonDao personDao = (PersonDao) getServletContext().getAttribute("personDao");
             int intId = Integer.parseInt(id);
-            if (cd.deleteChild(intId)) {
+            if (personDao.deleteChild(intId)) {
                 request.setAttribute("info", "usunales dziecko bydlaku !!!!!! ");
             } else {
                 request.setAttribute("info", "usuniecie sie nie powiodło");
@@ -56,7 +55,51 @@ public class EditServlet extends HttpServlet {
         } else if (action.equals("addKeeper")) {
             request.setAttribute("id", id);
             request.getRequestDispatcher(request.getContextPath() + "WEB-INF/dziecko/uAddKeeper.jsp").forward(request, response);
-        }
+        } else if (action.equals("deleteKeeper")) {
+            PersonDao personDao = (PersonDao) getServletContext().getAttribute("personDao");
+            int intId = Integer.parseInt(request.getParameter("id"));
+            int intIdk = Integer.parseInt(request.getParameter("idk"));
+            personDao.deleteOpiekaKeeperIDChildID(intIdk, intId);
+            if (personDao.deleteKeeper(intIdk)) {
+                request.setAttribute("info", "usunales opiekuna ");
+            } else {
+                request.setAttribute("info", "usuniecie sie nie powiodło");
+            }
+            request.setAttribute("id", id);
+            request.getRequestDispatcher(request.getContextPath() + "/uDetails").forward(request, response);
+        } else if (action.equals("addGrupa")) {
+            PersonDao personDao = (PersonDao) getServletContext().getAttribute("personDao");
+            int intId = Integer.parseInt(request.getParameter("id"));
+            int intIdG = Integer.parseInt(request.getParameter("id_grupy"));
+            int intN = 3;
+            int idO = 2;
+            int idS = 7;
+            personDao.setChildToGrup(intId, intIdG, intN, idO, idS);
+            request.setAttribute("id", id);
+            request.getRequestDispatcher(request.getContextPath() + "/uDetails").forward(request, response);
 
+        } else if (action.equals("addZajecia")) {
+            PersonDao personDao = (PersonDao) getServletContext().getAttribute("personDao");
+            int intId = Integer.parseInt(request.getParameter("id"));
+            int intIdZ = Integer.parseInt(request.getParameter("id_zajecia"));
+            int intN = 3;
+            personDao.setChildToZajecia(intN, intIdZ, intId);
+            request.setAttribute("id", id);
+            request.getRequestDispatcher(request.getContextPath() + "/uDetails").forward(request, response);
+        }else if (action.equals("deleteFromGrupa")) {
+            PersonDao personDao = (PersonDao) getServletContext().getAttribute("personDao");
+            int intIdD = Integer.parseInt(request.getParameter("id"));
+            int intIdG = Integer.parseInt(request.getParameter("idG"));
+            personDao.deleteChildFromGroup(intIdD, intIdG);
+            request.setAttribute("id", id);
+            request.getRequestDispatcher(request.getContextPath() + "/uDetails").forward(request, response);
+        }else if (action.equals("deleteFromZajecia")) {
+            PersonDao personDao = (PersonDao) getServletContext().getAttribute("personDao");
+            int intIdD = Integer.parseInt(request.getParameter("id"));
+            int intIdZ = Integer.parseInt(request.getParameter("idZ"));
+            personDao.deleteChildFromZajecia(intIdD, intIdZ);
+            request.setAttribute("id", id);
+            request.getRequestDispatcher(request.getContextPath() + "/uDetails").forward(request, response);
+        }
     }
 }

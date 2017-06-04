@@ -25,12 +25,14 @@ public class uDetailsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         PersonDao personDao = (PersonDao) getServletContext().getAttribute("personDao");
+        Person child = personDao.selectChildById(id);
         ArrayList<Person> opiekunowie =  personDao.getKeeper(id);
         ArrayList<Grupa> grupa =  personDao.getGrupaDziecko(id);
         ArrayList<Zajecia> zajecia =  personDao.getZajeciaDziecko(id);
 
 
         request.setAttribute("opiekunowie",opiekunowie);
+        request.setAttribute("child",child);
         request.setAttribute("grupa",grupa);
         request.setAttribute("zajecia",zajecia);
         request.getRequestDispatcher(request.getContextPath() + "WEB-INF/dziecko/uDetails.jsp").forward(request, response);

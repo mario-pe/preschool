@@ -34,6 +34,9 @@ public class uAddServlet extends HttpServlet {
             personDao.addKeeper(name, surname, city, street, home);
             int idKeeper = personDao.getKeeper(name, surname, city, street, home);
             personDao.reltationChildKeeper(idChild,idKeeper);
+            String id = request.getParameter("id");
+            request.setAttribute("id", id);
+            request.getRequestDispatcher(request.getContextPath() + "/uDetails").forward(request, response);
         }
 
         request.getRequestDispatcher(request.getContextPath() + "/uczniowie").forward(request, response);
