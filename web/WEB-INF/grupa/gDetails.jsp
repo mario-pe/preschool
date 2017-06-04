@@ -12,7 +12,42 @@
     <title>PsedskoleSATANA</title>
 </head>
 <body>
-<h1>szcególy doptyczace grupy</h1>
+<h1>Szcególy doptyczace grupy</h1>
+<h1> Nauczyciele</h1>
+<table border="1">
+    <tr>
+        <td>imie</td>
+        <td>nazwisko</td>
+    </tr>
+
+    <c:forEach var="o" items="${nauczycielList}">
+        <tr>
+            <td>${o.imie}</td>
+            <td>${o.nazwisko}</td>
+        </tr>
+    </c:forEach>
+
+</table>
+
+<h1> Opiekunowie</h1>
+<table border="1">
+    <tr>
+        <td>imie</td>
+        <td>nazwisko</td>
+    </tr>
+
+    <c:forEach var="o" items="${opiekunList}">
+        <tr>
+            <td>${o.imie}</td>
+            <td>${o.nazwisko}</td>
+        </tr>
+    </c:forEach>
+
+</table border="1">
+<h1> osoba odpowiaedzialna za pożadek</h1>
+ ${sprzataczka.imie} ${sprzataczka.nazwisko}
+
+
 <h2>lista dzieci</h2>
 <table>
     <tr>
@@ -40,6 +75,8 @@
             </td>
         </tr>
     </c:forEach>
+
+
 </table>
 </body>
 </html>
