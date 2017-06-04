@@ -40,6 +40,27 @@ public class PersonDao {
         return null;
     }
 
+    public Person selectChildById(int idP) {
+        try {
+            PreparedStatement ps = this.conn.prepareStatement("call selectChildById(?)");
+            ps.setInt(1, idP);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_dziecko");
+                String name = resultSet.getString("imie");
+                String surname = resultSet.getString("nazwisko");
+                String city = resultSet.getString("miejscowosc");
+                String street = resultSet.getString("ulica");
+                String home = resultSet.getString("dom");
+                Person person = new Person(id, name, surname, city, street, home);
+                return person;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public boolean deleteChild(int id) {
         try {
             PreparedStatement ps = this.conn.prepareStatement("call deleteChild(?)");
@@ -144,7 +165,7 @@ public class PersonDao {
                 String godzina = resultSet.getString("godzina");
                 String rok = resultSet.getString("rok_szkolny");
                 String dzien = resultSet.getString("dzien");
-                Zajecia z = new Zajecia(id, przedmiot, godzina, rok,dzien);
+                Zajecia z = new Zajecia(id, przedmiot, godzina, rok, dzien);
                 zajecia.add(z);
             }
             return zajecia;
@@ -236,12 +257,9 @@ public class PersonDao {
 
     public boolean setChildToGrup(int idD, int idG, int idN, int idO, int idS) {
         try {
-            PreparedStatement ps = this.conn.prepareStatement("call setChildToGrup(?,?,?,?,?)");
+            PreparedStatement ps = this.conn.prepareStatement("call setChildToGrup(?,?)");
             ps.setInt(1, idD);
             ps.setInt(2, idG);
-            ps.setInt(3, idN);
-            ps.setInt(4, idO);
-            ps.setInt(5, idS);
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -254,8 +272,8 @@ public class PersonDao {
         try {
             PreparedStatement ps = this.conn.prepareStatement("call setChildToZajecia(?,?,?)");
             ps.setInt(1, idN);
-            ps.setInt(2, idZ);
-            ps.setInt(3, idD);
+            ps.setInt(2, idD);
+            ps.setInt(3, idZ);
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -290,10 +308,11 @@ public class PersonDao {
         return false;
     }
 
-    public Person selectChildById(int idC) {
+    public ArrayList<Person> getChildrenListGrupa(int idG) {
+        ArrayList<Person> children = new ArrayList<>();
         try {
-            PreparedStatement ps = this.conn.prepareStatement("call selectChildById(?)");
-            ps.setInt(1, idC);
+            PreparedStatement ps = this.conn.prepareStatement("call getChildrenListGrupa(?)");
+            ps.setInt(1, idG);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id_dziecko");
@@ -302,13 +321,13 @@ public class PersonDao {
                 String city = resultSet.getString("miejscowosc");
                 String street = resultSet.getString("ulica");
                 String home = resultSet.getString("dom");
-                Person person = new Person(id, name, surname, city, street, home);
-                return person;
+                Person child = new Person(id, name, surname, city, street, home);
+                children.add(child);
             }
+            return children;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
-
 }

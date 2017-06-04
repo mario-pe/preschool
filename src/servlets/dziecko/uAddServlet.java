@@ -28,8 +28,10 @@ public class uAddServlet extends HttpServlet {
         String street = request.getParameter("street");
         String home = request.getParameter("home");
         PersonDao personDao = (PersonDao) getServletContext().getAttribute("personDao");
-        if (type.equals("child"))
+        if (type.equals("child")){
             personDao.addChild(name, surname, city, street, home);
+            request.getRequestDispatcher(request.getContextPath() + "/uczniowie").forward(request, response);
+        }
         else { //(type.equals("keeper"))
             personDao.addKeeper(name, surname, city, street, home);
             int idKeeper = personDao.getKeeper(name, surname, city, street, home);
@@ -39,7 +41,7 @@ public class uAddServlet extends HttpServlet {
             request.getRequestDispatcher(request.getContextPath() + "/uDetails").forward(request, response);
         }
 
-        request.getRequestDispatcher(request.getContextPath() + "/uczniowie").forward(request, response);
+
 
     }
 }

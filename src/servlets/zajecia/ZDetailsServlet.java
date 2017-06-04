@@ -28,6 +28,7 @@ public class ZDetailsServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         ZajeciaDao zajeciaDao = (ZajeciaDao) getServletContext().getAttribute("zajeciaDao");
         PracownikDao pracownikDao = (PracownikDao) getServletContext().getAttribute("pracownikDao");
+
         Zajecia zajecia = zajeciaDao.selectZajeciaByID(id);
         ArrayList<Person> childList = zajeciaDao.getChildListZajecia(id);
         Pracownik pracownik = pracownikDao.selectNauczycielByIdZajecia(id);

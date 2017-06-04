@@ -82,15 +82,8 @@ public class GrupaDao {
         return false;
     }
 
-    public boolean detailsGroup(int id) {
-        try {
-            PreparedStatement ps = this.conn.prepareStatement("call planZajeć(?)");
-            ps.setInt(1, id);
-            ps.execute();
-            return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
+
+
+
 }
+

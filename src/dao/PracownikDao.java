@@ -107,5 +107,60 @@ public class PracownikDao {
         }
         return null;
     }
+    public ArrayList<Pracownik> selectNauczycielByIdGrupa(int idZ){
+        ArrayList<Pracownik> nauczycielList = new ArrayList<>();
+        try {
+            PreparedStatement ps = this.conn.prepareStatement("call selectNauczycielByIdGrupa(?)");
+            ps.setInt(1,idZ);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_pracownik");
+                String name = resultSet.getString("imie");
+                String surname = resultSet.getString("nazwisko");
+                Pracownik pracownik = new Pracownik(id, name, surname);
+                nauczycielList.add(pracownik);
+            }
+            return nauczycielList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public ArrayList<Pracownik> selectOpiekunByIdGrupa(int idZ){
+        ArrayList<Pracownik> opiekunList = new ArrayList<>();
+        try {
+            PreparedStatement ps = this.conn.prepareStatement("call selectOpiekunByIdGrupa(?)");
+            ps.setInt(1,idZ);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_pracownik");
+                String name = resultSet.getString("imie");
+                String surname = resultSet.getString("nazwisko");
+                Pracownik pracownik = new Pracownik(id, name, surname);
+                opiekunList.add(pracownik);
+            }
+            return opiekunList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public Pracownik selectSprzataczkaByIdGrupa(int idZ){
+        try {
+            PreparedStatement ps = this.conn.prepareStatement("call selectSprzataczkaByIdGrupa(?)");
+            ps.setInt(1,idZ);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_pracownik");
+                String name = resultSet.getString("imie");
+                String surname = resultSet.getString("nazwisko");
+                Pracownik pracownik = new Pracownik(id, name, surname);
+                return pracownik;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
 

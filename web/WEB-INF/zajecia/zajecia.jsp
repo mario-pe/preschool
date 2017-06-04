@@ -27,6 +27,7 @@
             <td>${grupa.przedmiot}</td>
             <td>${grupa.godzina}</td>
             <td>${grupa.rok}</td>
+            <td>${grupa.dzien}</td>
 
             <c:url var="urlDelete" scope="page" value="/zAction">
                 <c:param name="id" value="${grupa.id}"/>

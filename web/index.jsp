@@ -9,7 +9,7 @@
 <html>
 <head>
 
-    <title>przedszkole</title>
+    <title>Psedskole</title>
 </head>
 <body>
 Witaj w predzszkolu

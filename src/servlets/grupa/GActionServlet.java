@@ -45,9 +45,16 @@ public class GActionServlet extends HttpServlet {
 
             request.getRequestDispatcher(request.getContextPath() + "WEB-INF/grupa/gEdit.jsp").forward(request, response);
         } else if (action.equals("details")) {
-            request.getRequestDispatcher(request.getContextPath() + "/gDetails").forward(request, response);
-        } else if (action.equals("studentList")) {
 
+            request.setAttribute("id",id);
+            request.getRequestDispatcher(request.getContextPath() + "/gDetails").forward(request, response);
+        } else if (action.equals("deleteChild")) {
+            int intIdG = Integer.parseInt(id);
+            int intIdC = Integer.parseInt(request.getParameter("idC"));
+
+            PersonDao personDao = (PersonDao) getServletContext().getAttribute("personDao");
+            personDao.deleteChildFromGroup(intIdC,intIdG);
+            request.setAttribute("id", id);
 
         }else if (action.equals("add")) {
             request.getRequestDispatcher(request.getContextPath() + "WEB-INF/grupa/gAdd.jsp").forward(request, response);
