@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>psedszkole</title>
+    <title>PsedskoleSATANA</title>
 </head>
 <body>
 ${info}
@@ -90,6 +90,7 @@ ${info}
         <td>${z.id}</td>
         <td>${z.przedmiot}</td>
         <td>${z.godzina}</td>
+        <td>${z.dzien}</td>
         <td>${z.rok}</td>
         <c:url var="urlDelete" scope="page" value="/uAction">
             <c:param name="idZ" value="${z.id}"/>

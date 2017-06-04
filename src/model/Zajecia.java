@@ -8,12 +8,14 @@ public class Zajecia {
     private String przedmiot;
     private String godzina;
     private String rok;
+    private String dzien;
 
-    public Zajecia(int id, String przedmiot, String godzina, String rok) {
+    public Zajecia(int id, String przedmiot, String godzina, String rok, String dzien) {
         this.id = id;
         this.przedmiot = przedmiot;
         this.godzina = godzina;
         this.rok = rok;
+        this.dzien = dzien;
     }
 
     public int getId() {
@@ -46,5 +48,13 @@ public class Zajecia {
 
     public void setRok(String rok) {
         this.rok = rok;
+    }
+
+    public String getDzien() {
+        return dzien;
+    }
+
+    public void setDzien(String dzien) {
+        this.dzien = dzien;
     }
 }

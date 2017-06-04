@@ -1,7 +1,7 @@
 package servlets.zajecia;
 
 
-
+import dao.PersonDao;
 import dao.ZajeciaDao;
 import model.Zajecia;
 
@@ -18,7 +18,7 @@ import java.io.IOException;
 @WebServlet(name = "ZActionServlet", urlPatterns = "/zAction")
 public class ZActionServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,8 +38,7 @@ public class ZActionServlet extends HttpServlet {
         } else if (action.equals("edit")) {
             String przedmiot = request.getParameter("przedmiot");
             String godzina = request.getParameter("godzina");
-            String  rok = request.getParameter("rok");
-
+            String rok = request.getParameter("rok");
             request.setAttribute("id", id);
             request.setAttribute("przedmiot", przedmiot);
             request.setAttribute("godzina", godzina);
@@ -47,12 +46,27 @@ public class ZActionServlet extends HttpServlet {
 
             request.getRequestDispatcher(request.getContextPath() + "WEB-INF/zajecia/zEdit.jsp").forward(request, response);
         } else if (action.equals("details")) {
+
+            request.setAttribute("id", id);
             request.getRequestDispatcher(request.getContextPath() + "/zDetails").forward(request, response);
-        } else if (action.equals("studentList")) {
 
-
-        }else if (action.equals("add")) {
+        } else if (action.equals("add")) {
             request.getRequestDispatcher(request.getContextPath() + "WEB-INF/zajecia/zAdd.jsp").forward(request, response);
+        }else if(action.equals("deleteChild")){
+            int intIdZ = Integer.parseInt(id);
+            int intIdC = Integer.parseInt(request.getParameter("idC"));
+            PersonDao personDao = (PersonDao) getServletContext().getAttribute("personDao");
+            personDao.deleteChildFromZajecia(intIdC,intIdZ);
+            request.setAttribute("id", id);
+            request.getRequestDispatcher(request.getContextPath() + "/zDetails").forward(request, response);
+        }else if(action.equals("addChild")){
+            int intIdZ = Integer.parseInt(id);
+            int intIdC = Integer.parseInt(request.getParameter("idC"));
+            int intIdN = Integer.parseInt(request.getParameter("idN"));
+            PersonDao personDao = (PersonDao) getServletContext().getAttribute("personDao");
+            personDao.setChildToZajecia(intIdN,intIdZ,intIdC);
+            request.setAttribute("id", id);
+            request.getRequestDispatcher(request.getContextPath() + "/zDetails").forward(request, response);
         }
     }
 }

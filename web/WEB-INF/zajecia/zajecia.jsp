@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>PsedskoleSATANA</title>
 </head>
 <body>
 <h1> zajecia dodatkowe</h1>
@@ -47,17 +47,10 @@
             </td>
             <c:url var="urlEdit" scope="page" value="/zAction">
                 <c:param name="id" value="${grupa.id}"/>
-                <c:param name="action" value="studentList"/>
-            </c:url>
-            <td>
-                <a href="${urlEdit}"><input type="button" value="lista uczniów"/></a>
-            </td>
-            <c:url var="urlEdit" scope="page" value="/zAction">
-                <c:param name="id" value="${grupa.id}"/>
                 <c:param name="action" value="details"/>
             </c:url>
             <td>
-                <a href="${urlEdit}"><input type="button" value="plan zajęć"/></a>
+                <a href="${urlEdit}"><input type="button" value="szczegóły"/></a>
             </td>
         </tr>
     </c:forEach>

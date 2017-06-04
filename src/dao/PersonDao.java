@@ -143,7 +143,8 @@ public class PersonDao {
                 String przedmiot = resultSet.getString("przedmiot");
                 String godzina = resultSet.getString("godzina");
                 String rok = resultSet.getString("rok_szkolny");
-                Zajecia z = new Zajecia(id, przedmiot, godzina, rok);
+                String dzien = resultSet.getString("dzien");
+                Zajecia z = new Zajecia(id, przedmiot, godzina, rok,dzien);
                 zajecia.add(z);
             }
             return zajecia;

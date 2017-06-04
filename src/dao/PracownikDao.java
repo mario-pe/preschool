@@ -77,7 +77,8 @@ public class PracownikDao {
         }
         return false;
     }
-    public boolean detailsPracownik(int id){
+
+    public boolean detailsPracownik(int id) {
         try {
             PreparedStatement ps = this.conn.prepareStatement("call detailsPracownik(?)");
             ps.setInt(1, id);
@@ -87,6 +88,24 @@ public class PracownikDao {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public Pracownik selectNauczycielByIdZajecia(int idZ){
+        try {
+            PreparedStatement ps = this.conn.prepareStatement("call selectNauczycielByIdZajecia(?)");
+            ps.setInt(1,idZ);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_pracownik");
+                String name = resultSet.getString("imie");
+                String surname = resultSet.getString("nazwisko");
+                Pracownik pracownik = new Pracownik(id, name, surname);
+                return pracownik;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
 

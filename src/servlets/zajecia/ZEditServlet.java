@@ -25,8 +25,9 @@ public class ZEditServlet extends HttpServlet {
         String przedmiot = request.getParameter("przedmiot");
         String godzina = request.getParameter("godzina");
         String rok = request.getParameter("rok");
+        String dzien = request.getParameter("dzien");
         ZajeciaDao zajeciaDao = (ZajeciaDao) getServletContext().getAttribute("zajeciaDao");
-        zajeciaDao.editZajecia(id,przedmiot ,godzina,rok);
+        zajeciaDao.editZajecia(id,przedmiot ,godzina,rok,dzien);
         request.getRequestDispatcher(request.getContextPath() + "/zajecia").forward(request,response);
     }
 }

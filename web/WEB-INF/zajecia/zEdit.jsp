@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>PsedskoleSATANA</title>
 </head>
 <body>
 ${id}
@@ -28,6 +28,11 @@ ${id}
         <td>${rok}</td>
         <td>rok</td>
         <td><input type="text" name="rok"/></td>
+    </tr>
+    <tr>
+        <td>${dzien}</td>
+        <td>rok</td>
+        <td><input type="text" name="dzien"/></td>
     </tr>
 
 </table>
