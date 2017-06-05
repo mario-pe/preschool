@@ -44,9 +44,21 @@ public class PActionServlet extends HttpServlet {
 
             request.getRequestDispatcher(request.getContextPath() + "WEB-INF/pracownik/pEdit.jsp").forward(request, response);
         } else if (action.equals("details")) {
+            request.setAttribute("id", id);
             request.getRequestDispatcher(request.getContextPath() + "/pDetails").forward(request, response);
         } else if (action.equals("add")) {
-            request.getRequestDispatcher(request.getContextPath() + "WEB-INF/pracownik/pAdd.jsp").forward(request, response);
+            String zawod = request.getParameter("zawod");
+            if (zawod.equals("n")) {
+                request.getRequestDispatcher(request.getContextPath() + "WEB-INF/pracownik/pAddN.jsp").forward(request, response);
+            } else if (zawod.equals("o")) {
+                request.getRequestDispatcher(request.getContextPath() + "WEB-INF/pracownik/pAdd.jsp").forward(request, response);
+            } else if (zawod.equals("k")) {
+                request.getRequestDispatcher(request.getContextPath() + "WEB-INF/pracownik/pAddK.jsp").forward(request, response);
+            } else if (zawod.equals("s")) {
+                request.getRequestDispatcher(request.getContextPath() + "WEB-INF/pracownik/pAddS.jsp").forward(request, response);
+            }else {
+                request.getRequestDispatcher(request.getContextPath() + "WEB-INF/pracownik/pracownicy.jsp").forward(request, response);
+            }
         }
 
     }

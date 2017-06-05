@@ -58,6 +58,12 @@
 </table>
 <form action="/pAction">
     <input type="hidden" name="action" value="add"/>
+    <select name="zawod">
+        <option value="n">nauczyciel</option>
+        <option value="o">opiekunka</option>
+        <option value="s">sprzataczka</option>
+        <option value="k">kucharka</option>
+    </select>
     <input type="submit" value="dodaj pracownika"/>
 </form>
 

@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: mario
-  Date: 31.05.2017
-  Time: 12:24
+  Date: 05.06.2017
+  Time: 19:27
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -30,11 +30,11 @@
             <td><input type="text" name="type"/> </td>
         </tr>
         <tr>
-            <td>specjalnosc</td>
-            <td><input type="text" name="specjalnosc"/> </td>
+            <td>data badan</td>
+            <td><input type="text" name="badania"/> </td>
         </tr>
     </table>
-    <input type="hidden" value="opiekunka" name="stanowisko"/>
+    <input type="hidden" value="kucharka" name="stanowisko"/>
     <input type="submit" value="dodaj"/>
 </form>
 </body>

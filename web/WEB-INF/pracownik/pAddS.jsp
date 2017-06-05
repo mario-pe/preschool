@@ -1,14 +1,17 @@
 <%--
   Created by IntelliJ IDEA.
   User: mario
-  Date: 31.05.2017
-  Time: 12:24
+  Date: 05.06.2017
+  Time: 19:26
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Psedszkole</title>
+    <title>Title</title>
+</head>
+<body>
+<title>Psedszkole</title>
 </head>
 <body>
 <form action="/pAdd">
@@ -29,13 +32,11 @@
             <td>typ umowy</td>
             <td><input type="text" name="type"/> </td>
         </tr>
-        <tr>
-            <td>specjalnosc</td>
-            <td><input type="text" name="specjalnosc"/> </td>
-        </tr>
     </table>
-    <input type="hidden" value="opiekunka" name="stanowisko"/>
+    <input type="hidden" value="sprzataczka" name="stanowisko"/>
     <input type="submit" value="dodaj"/>
 </form>
+</body>
+</html>
 </body>
 </html>

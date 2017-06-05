@@ -10,7 +10,7 @@
 <head>
     <title>Psedskole</title>
 </head>
-<body>
+
 <body>
 <form action="/pEdit">
     <table>
@@ -24,7 +24,16 @@
             <td>nazwisko</td>
             <td><input type="text" name="nazwisko"/></td>
         </tr>
-
+        <tr>
+            <td>${data}</td>
+            <td>data umowy</td>
+            <td><input type="datetime" name="date"/></td>
+        </tr>
+        <tr>
+            <td>${type}</td>
+            <td>typ umowy</td>
+            <td><input type="text" name="type"/></td>
+        </tr>
     </table>
     <input type="hidden" value="${id}" name="id"/>
     <input type="submit" value="edytuj"/>
