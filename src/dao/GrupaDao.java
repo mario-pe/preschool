@@ -41,6 +41,47 @@ public class GrupaDao {
         return null;
     }
 
+    public ArrayList<Grupa> grupaByIdNauczyciel (int idP){
+        ArrayList<Grupa> grupy = new ArrayList<>();
+        try {
+            PreparedStatement ps = this.conn.prepareStatement("call grupaByIdNauczyciel(?)");
+            ps.setInt(1,idP);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_grupa");
+                String kat = resultSet.getString("kat_wiekowa");
+                int sala = resultSet.getInt("sala");
+                String rok = resultSet.getString("rok_szkolny");
+                Grupa grupa = new Grupa(id, kat, sala, rok);
+                grupy.add(grupa);
+            }
+            return grupy;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public ArrayList<Grupa> grupaByIdOpiekunka (int idP){
+        ArrayList<Grupa> grupy = new ArrayList<>();
+        try {
+            PreparedStatement ps = this.conn.prepareStatement("call grupaByIdOpiekunka(?)");
+            ps.setInt(1,idP);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_grupa");
+                String kat = resultSet.getString("kat_wiekowa");
+                int sala = resultSet.getInt("sala");
+                String rok = resultSet.getString("rok_szkolny");
+                Grupa grupa = new Grupa(id, kat, sala, rok);
+                grupy.add(grupa);
+            }
+            return grupy;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public boolean deleteGrupa(int id) {
         try {
             PreparedStatement ps = this.conn.prepareStatement("call deleteGrupa(?)");

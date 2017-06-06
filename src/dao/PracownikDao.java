@@ -1,8 +1,6 @@
 package dao;
 
-import model.Person;
-import model.Pracownik;
-import model.Umowa;
+import model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -26,7 +24,8 @@ public class PracownikDao {
                 int id = resultSet.getInt("id_pracownik");
                 String name = resultSet.getString("imie");
                 String surname = resultSet.getString("nazwisko");
-                Pracownik pracownik = new Pracownik(id, name, surname);
+                String position = resultSet.getString("stanowisko");
+                Pracownik pracownik = new Pracownik(id, name, surname, position);
                 pracownicy.add(pracownik);
             }
             return pracownicy;
@@ -62,24 +61,13 @@ public class PracownikDao {
         return false;
     }
 
-    public boolean addPracownik(String name, String surename) {
+    public boolean addPracownik(String name, String surename, String stanowisko) {
         try {
-            PreparedStatement ps = this.conn.prepareStatement("call addPracownik(?,?)");
+            PreparedStatement ps = this.conn.prepareStatement("call addPracownik(?,?,?)");
 
             ps.setString(1, name);
             ps.setString(2, surename);
-            ps.execute();
-            return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    public boolean detailsPracownik(int id) {
-        try {
-            PreparedStatement ps = this.conn.prepareStatement("call detailsPracownik(?)");
-            ps.setInt(1, id);
+            ps.setString(3, stanowisko);
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -97,7 +85,8 @@ public class PracownikDao {
                 int id = resultSet.getInt("id_pracownik");
                 String name = resultSet.getString("imie");
                 String surname = resultSet.getString("nazwisko");
-                Pracownik pracownik = new Pracownik(id, name, surname);
+//                String position = resultSet.getString("stanowisko");
+                Pracownik pracownik = new Pracownik(id, name, surname);//, position);
                 return pracownik;
             }
         } catch (SQLException e) {
@@ -116,7 +105,8 @@ public class PracownikDao {
                 int id = resultSet.getInt("id_pracownik");
                 String name = resultSet.getString("imie");
                 String surname = resultSet.getString("nazwisko");
-                Pracownik pracownik = new Pracownik(id, name, surname);
+//                String position = resultSet.getString("stanowisko");
+                Pracownik pracownik = new Pracownik(id, name, surname);//, position);
                 nauczycielList.add(pracownik);
             }
             return nauczycielList;
@@ -136,7 +126,8 @@ public class PracownikDao {
                 int id = resultSet.getInt("id_pracownik");
                 String name = resultSet.getString("imie");
                 String surname = resultSet.getString("nazwisko");
-                Pracownik pracownik = new Pracownik(id, name, surname);
+//                String position = resultSet.getString("stanowisko");
+                Pracownik pracownik = new Pracownik(id, name, surname);//, position);
                 opiekunList.add(pracownik);
             }
             return opiekunList;
@@ -155,7 +146,8 @@ public class PracownikDao {
                 int id = resultSet.getInt("id_pracownik");
                 String name = resultSet.getString("imie");
                 String surname = resultSet.getString("nazwisko");
-                Pracownik pracownik = new Pracownik(id, name, surname);
+//                String position = resultSet.getString("stanowisko");
+                Pracownik pracownik = new Pracownik(id, name, surname);//, position);
                 return pracownik;
             }
         } catch (SQLException e) {
@@ -173,7 +165,8 @@ public class PracownikDao {
                 int id = resultSet.getInt("id_pracownik");
                 String name = resultSet.getString("imie");
                 String surname = resultSet.getString("nazwisko");
-                Pracownik pracownik = new Pracownik(id, name, surname);
+                String position = resultSet.getString("stanowisko");
+                Pracownik pracownik = new Pracownik(id, name, surname, position);
                 return pracownik;
             }
         } catch (SQLException e) {
@@ -192,7 +185,8 @@ public class PracownikDao {
                 int id = resultSet.getInt("id_pracownik");
                 String name = resultSet.getString("imie");
                 String surname = resultSet.getString("nazwisko");
-                Pracownik pracownik = new Pracownik(id, name, surname);
+                String position = resultSet.getString("stanowisko");
+                Pracownik pracownik = new Pracownik(id, name, surname, position);
                 return pracownik;
             }
         } catch (SQLException e) {
@@ -228,7 +222,7 @@ public class PracownikDao {
                 int id = rs.getInt("id_umowa");
                 String typeQ = rs.getString("type");
                 Timestamp dateQ = rs.getTimestamp("date");
-                Umowa umowa = new Umowa(id,typeQ, dateQ);
+                Umowa umowa = new Umowa(id, typeQ, dateQ);
                 return umowa;
             }
         } catch (SQLException e) {
@@ -248,7 +242,7 @@ public class PracownikDao {
                 int id = rs.getInt("id_umowa");
                 String typeQ = rs.getString("type");
                 Timestamp dateQ = rs.getTimestamp("date");
-                Umowa umowa = new Umowa(id,typeQ, dateQ);
+                Umowa umowa = new Umowa(id, typeQ, dateQ);
                 return umowa;
             }
         } catch (SQLException e) {
@@ -257,7 +251,7 @@ public class PracownikDao {
         return null;
     }
 
-    public boolean addPodpisuje(int idP, int idU){
+    public boolean addPodpisuje(int idP, int idU) {
         try {
             PreparedStatement ps = this.conn.prepareStatement("call addPodpisuje(?,?)");
 
@@ -271,7 +265,7 @@ public class PracownikDao {
         return false;
     }
 
-    public ArrayList<Umowa> selectListUmowaByIdPracownik(int idP){
+    public ArrayList<Umowa> selectListUmowaByIdPracownik(int idP) {
 
         ArrayList<Umowa> umowaList = new ArrayList<>();
         try {
@@ -283,7 +277,7 @@ public class PracownikDao {
                 int id = rs.getInt("id_umowa");
                 String typeQ = rs.getString("type");
                 Timestamp dateQ = rs.getTimestamp("date");
-                Umowa umowa = new Umowa(id,typeQ, dateQ);
+                Umowa umowa = new Umowa(id, typeQ, dateQ);
                 umowaList.add(umowa);
             }
             return umowaList;
@@ -293,8 +287,7 @@ public class PracownikDao {
         return null;
     }
 
-
-    public boolean addKucharka(int id, String badania){
+    public boolean addKucharka(int id, String badania) {
         try {
             PreparedStatement ps = this.conn.prepareStatement("call addKucharka(?,?)");
 
@@ -307,13 +300,14 @@ public class PracownikDao {
         }
         return false;
     }
-    public boolean addNauczyciel(int id, String stopien, String przedmiot){
+
+    public boolean addNauczyciel(int id, String stopien, String przedmiot) {
         try {
             PreparedStatement ps = this.conn.prepareStatement("call addNauczyciel(?,?,?)");
 
             ps.setInt(1, id);
             ps.setString(2, stopien);
-            ps.setString(2, przedmiot);
+            ps.setString(3, przedmiot);
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -321,7 +315,8 @@ public class PracownikDao {
         }
         return false;
     }
-    public boolean addOpiekunka(int id, String specjalnosc){
+
+    public boolean addOpiekunka(int id, String specjalnosc) {
         try {
             PreparedStatement ps = this.conn.prepareStatement("call addOpiekunka(?,?)");
 
@@ -334,7 +329,8 @@ public class PracownikDao {
         }
         return false;
     }
-    public boolean addSprzataczka(int id){
+
+    public boolean addSprzataczka(int id) {
         try {
             PreparedStatement ps = this.conn.prepareStatement("call addSprzataczka(?)");
 
@@ -345,6 +341,78 @@ public class PracownikDao {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public Nauczyciel selectNauczycielById(int idP) {
+        try {
+            PreparedStatement ps = this.conn.prepareStatement("call selectNauczycielById(?)");
+            ps.setInt(1, idP);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_pracownik");
+                String name = resultSet.getString("imie");
+                String surname = resultSet.getString("nazwisko");
+                String position = resultSet.getString("stanowisko");
+                String stopień = resultSet.getString("stopien_zawodowy");
+                String przedmiot = resultSet.getString("przedmiot");
+                Nauczyciel nauczyciel = new Nauczyciel(id, name, surname, position, stopień, przedmiot);
+                return nauczyciel;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Opiekunka selectOpiekunkaById(int idP) {
+        try {
+            PreparedStatement ps = this.conn.prepareStatement("call selectOpiekunkaById(?)");
+            ps.setInt(1, idP);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_pracownik");
+                String name = resultSet.getString("imie");
+                String surname = resultSet.getString("nazwisko");
+                String position = resultSet.getString("stanowisko");
+                String specjalnosc = resultSet.getString("specjalnosc");
+
+                Opiekunka opiekunka = new Opiekunka(id, name, surname, position, specjalnosc);
+                return opiekunka;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Timestamp selectDateKucharka(int idP) {
+        try {
+            PreparedStatement ps = this.conn.prepareStatement("call selectDateKucharka(?)");
+            ps.setInt(1, idP);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Timestamp date = rs.getTimestamp("badania");
+                return date;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public int selectGrupaSprzataczkaById(int idP) {
+        try {
+            PreparedStatement ps = this.conn.prepareStatement("call selectGrupaSprzataczkaById(?)");
+            ps.setInt(1, idP);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id_grupa");
+                return id;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }
 

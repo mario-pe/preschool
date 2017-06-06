@@ -19,6 +19,7 @@
         <td>id</td>
         <td>imie</td>
         <td>nazwisko</td>
+        <td>stanowisko</td>
 
 
     </tr>
@@ -27,7 +28,7 @@
             <td>${p.id}</td>
             <td>${p.imie}</td>
             <td>${p.nazwisko}</td>
-
+            <td>${p.stanowisko}<td>
             <c:url var="urlDelete" scope="page" value="/pAction">
                 <c:param name="id" value="${p.id}"/>
                 <c:param name="action" value="delete"/>
@@ -39,6 +40,7 @@
                 <c:param name="id" value="${p.id}"/>
                 <c:param name="kat" value="${p.imie}"/>
                 <c:param name="sala" value="${p.nazwisko}"/>
+
                 <c:param name="action" value="edit"/>
             </c:url>
             <td>
@@ -46,6 +48,7 @@
             </td>
             <c:url var="urlEdit" scope="page" value="/pAction">
                 <c:param name="id" value="${p.id}"/>
+                <c:param name="stanowisko" value="${p.stanowisko}"/>
                 <c:param name="action" value="details"/>
             </c:url>
             <td>
@@ -59,10 +62,10 @@
 <form action="/pAction">
     <input type="hidden" name="action" value="add"/>
     <select name="zawod">
-        <option value="n">nauczyciel</option>
-        <option value="o">opiekunka</option>
-        <option value="s">sprzataczka</option>
-        <option value="k">kucharka</option>
+        <option value="nauczyciel">nauczyciel</option>
+        <option value="opiekunka">opiekunka</option>
+        <option value="sprzataczka">sprzataczka</option>
+        <option value="kucharka">kucharka</option>
     </select>
     <input type="submit" value="dodaj pracownika"/>
 </form>

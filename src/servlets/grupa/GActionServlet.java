@@ -55,6 +55,7 @@ public class GActionServlet extends HttpServlet {
             PersonDao personDao = (PersonDao) getServletContext().getAttribute("personDao");
             personDao.deleteChildFromGroup(intIdC,intIdG);
             request.setAttribute("id", id);
+            request.getRequestDispatcher(request.getContextPath() + "/gDetails").forward(request, response);
 
         }else if (action.equals("add")) {
             request.getRequestDispatcher(request.getContextPath() + "WEB-INF/grupa/gAdd.jsp").forward(request, response);

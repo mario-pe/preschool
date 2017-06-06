@@ -7,6 +7,7 @@ public class Pracownik {
     private int id;
     private String imie;
     private String nazwisko;
+    private String stanowisko;
 
     public int getId() {
         return id;
@@ -32,11 +33,25 @@ public class Pracownik {
         this.nazwisko = nazwisko;
     }
 
+    public String getStanowisko() {
+        return stanowisko;
+    }
+
+    public void setStanowisko(String stanowisko) {
+        this.stanowisko = stanowisko;
+    }
+
+    public Pracownik(int id, String imie, String nazwisko, String stanowisko) {
+
+        this.id = id;
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.stanowisko = stanowisko;
+    }
+
     public Pracownik(int id, String imie, String nazwisko) {
         this.id = id;
         this.imie = imie;
         this.nazwisko = nazwisko;
-
-
     }
 }

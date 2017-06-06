@@ -32,7 +32,7 @@ public class PAddServlet extends HttpServlet {
         String date = request.getParameter("date");
 //        utils.converterStringToTimestamp(date);
         PracownikDao pracownikDao = (PracownikDao) getServletContext().getAttribute("pracownikDao");
-        pracownikDao.addPracownik(imie, nazwisko);
+        pracownikDao.addPracownik(imie, nazwisko,stanowisko);
         pracownikDao.addUmowa(type, date);
         Umowa umowa = pracownikDao.selectUmowa(type, date);
         Pracownik pracownik = pracownikDao.selectPracownik(imie, nazwisko);

@@ -20,7 +20,7 @@ public class uAddServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/plain;charset=utf-8");
-        int idChild = Integer.parseInt(request.getParameter("id"));
+//
         String type = request.getParameter("type");
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
@@ -33,6 +33,7 @@ public class uAddServlet extends HttpServlet {
             request.getRequestDispatcher(request.getContextPath() + "/uczniowie").forward(request, response);
         }
         else { //(type.equals("keeper"))
+            int idChild = Integer.parseInt(request.getParameter("id"));
             personDao.addKeeper(name, surname, city, street, home);
             int idKeeper = personDao.getKeeper(name, surname, city, street, home);
             personDao.reltationChildKeeper(idChild,idKeeper);

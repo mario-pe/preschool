@@ -33,7 +33,7 @@ public class ZajeciaDao {
                 String godzina = resultSet.getString("godzina");
                 String rok = resultSet.getString("rok_szkolny");
                 String dzien = resultSet.getString("dzien");
-                Zajecia z = new Zajecia(id, przedmiot, godzina, rok,dzien);
+                Zajecia z = new Zajecia(id, przedmiot, godzina, rok, dzien);
                 zajecia.add(z);
             }
             return zajecia;
@@ -43,11 +43,12 @@ public class ZajeciaDao {
         return null;
     }
 
-    public Zajecia selectZajeciaByID(int idZ){
+    public ArrayList<Zajecia> zajeciaByIdNauczyciel(int idP) {
+        ArrayList<Zajecia> zajecia = new ArrayList<>();
         try {
 
-            PreparedStatement ps = this.conn.prepareStatement("call selectZajeciaByID(?)");
-            ps.setInt(1,idZ);
+            PreparedStatement ps = this.conn.prepareStatement("call zajeciaByIdNauczyciel(?)");
+            ps.setInt(1,idP);
             ResultSet resultSet = ps.executeQuery();
 
             while (resultSet.next()) {
@@ -56,7 +57,53 @@ public class ZajeciaDao {
                 String godzina = resultSet.getString("godzina");
                 String rok = resultSet.getString("rok_szkolny");
                 String dzien = resultSet.getString("dzien");
-                Zajecia z = new Zajecia(id, przedmiot, godzina, rok,dzien);
+                Zajecia z = new Zajecia(id, przedmiot, godzina, rok, dzien);
+                zajecia.add(z);
+            }
+            return zajecia;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public ArrayList<Zajecia> grupaByIdOpiekunka(int idP) {
+        ArrayList<Zajecia> zajecia = new ArrayList<>();
+        try {
+
+            PreparedStatement ps = this.conn.prepareStatement("call grupaByIdOpiekunka(?)");
+            ps.setInt(1,idP);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_zajecia");
+                String przedmiot = resultSet.getString("przedmiot");
+                String godzina = resultSet.getString("godzina");
+                String rok = resultSet.getString("rok_szkolny");
+                String dzien = resultSet.getString("dzien");
+                Zajecia z = new Zajecia(id, przedmiot, godzina, rok, dzien);
+                zajecia.add(z);
+            }
+            return zajecia;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Zajecia selectZajeciaByID(int idZ) {
+        try {
+
+            PreparedStatement ps = this.conn.prepareStatement("call selectZajeciaByID(?)");
+            ps.setInt(1, idZ);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_zajecia");
+                String przedmiot = resultSet.getString("przedmiot");
+                String godzina = resultSet.getString("godzina");
+                String rok = resultSet.getString("rok_szkolny");
+                String dzien = resultSet.getString("dzien");
+                Zajecia z = new Zajecia(id, przedmiot, godzina, rok, dzien);
                 return z;
             }
         } catch (SQLException e) {
@@ -77,7 +124,7 @@ public class ZajeciaDao {
         return false;
     }
 
-    public boolean editZajecia(int id, String przedmiot, String godzina, String rok,String dzien) {
+    public boolean editZajecia(int id, String przedmiot, String godzina, String rok, String dzien) {
         try {
             PreparedStatement ps = this.conn.prepareStatement("call editZajecia(?,?,?,?,?)");
             ps.setInt(1, id);
@@ -107,12 +154,12 @@ public class ZajeciaDao {
         return false;
     }
 
-    public ArrayList<Person> getChildListZajecia(int idZ){
+    public ArrayList<Person> getChildListZajecia(int idZ) {
         ArrayList<Person> children = new ArrayList<>();
         try {
 
             PreparedStatement ps = this.conn.prepareStatement("call getChildListZajecia(?)");
-            ps.setInt(1,idZ);
+            ps.setInt(1, idZ);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id_dziecko");

@@ -44,20 +44,22 @@ public class PActionServlet extends HttpServlet {
 
             request.getRequestDispatcher(request.getContextPath() + "WEB-INF/pracownik/pEdit.jsp").forward(request, response);
         } else if (action.equals("details")) {
+            String stanowisko = request.getParameter("stanowisko");
             request.setAttribute("id", id);
+            request.setAttribute("stanowisko", stanowisko);
             request.getRequestDispatcher(request.getContextPath() + "/pDetails").forward(request, response);
         } else if (action.equals("add")) {
             String zawod = request.getParameter("zawod");
-            if (zawod.equals("n")) {
+            if (zawod.equals("nauczyciel")) {
                 request.getRequestDispatcher(request.getContextPath() + "WEB-INF/pracownik/pAddN.jsp").forward(request, response);
-            } else if (zawod.equals("o")) {
+            } else if (zawod.equals("opiekunka")) {
                 request.getRequestDispatcher(request.getContextPath() + "WEB-INF/pracownik/pAdd.jsp").forward(request, response);
-            } else if (zawod.equals("k")) {
+            } else if (zawod.equals("kucharka")) {
                 request.getRequestDispatcher(request.getContextPath() + "WEB-INF/pracownik/pAddK.jsp").forward(request, response);
-            } else if (zawod.equals("s")) {
+            } else if (zawod.equals("sprzataczka")) {
                 request.getRequestDispatcher(request.getContextPath() + "WEB-INF/pracownik/pAddS.jsp").forward(request, response);
             }else {
-                request.getRequestDispatcher(request.getContextPath() + "WEB-INF/pracownik/pracownicy.jsp").forward(request, response);
+                request.getRequestDispatcher(request.getContextPath() + "/pracownik").forward(request, response);
             }
         }
 

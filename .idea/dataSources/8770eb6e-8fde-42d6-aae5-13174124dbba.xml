@@ -156,339 +156,381 @@
     <routine id="70" parent="2" name="selectSprzataczkaByIdGrupa">
       <RoutineKind>procedure</RoutineKind>
     </routine>
-    <column id="71" parent="11" name="id_dziecko">
+    <routine id="71" parent="2" name="addKucharka">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="72" parent="2" name="addNauczyciel">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="73" parent="2" name="addOpiekunka">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="74" parent="2" name="addPodpisuje">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="75" parent="2" name="addSprzataczka">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="76" parent="2" name="addUmowa">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="77" parent="2" name="selectDateKucharka">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="78" parent="2" name="selectListUmowaByIdPracownik">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="79" parent="2" name="selectNauczycielById">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="80" parent="2" name="selectOpiekunkaById">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="81" parent="2" name="selectPracownikById">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="82" parent="2" name="selectPracownikByImieNazwisko">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="83" parent="2" name="selectUmowa">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="84" parent="2" name="selectUmowaById">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <column id="85" parent="11" name="id_dziecko">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="72" parent="11" name="imie">
+    <column id="86" parent="11" name="imie">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="73" parent="11" name="nazwisko">
+    <column id="87" parent="11" name="nazwisko">
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="74" parent="11" name="miejscowosc">
+    <column id="88" parent="11" name="miejscowosc">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="75" parent="11" name="ulica">
+    <column id="89" parent="11" name="ulica">
       <Position>5</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="76" parent="11" name="dom">
+    <column id="90" parent="11" name="dom">
       <Position>6</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <key id="77" parent="11" name="PRIMARY">
+    <key id="91" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_dziecko</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="78" parent="12" name="id_grupa">
+    <column id="92" parent="12" name="id_grupa">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="79" parent="12" name="kat_wiekowa">
+    <column id="93" parent="12" name="kat_wiekowa">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="80" parent="12" name="sala">
+    <column id="94" parent="12" name="sala">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="81" parent="12" name="rok_szkolny">
+    <column id="95" parent="12" name="rok_szkolny">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <key id="82" parent="12" name="PRIMARY">
+    <key id="96" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_grupa</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="83" parent="13" name="id_pracownik">
+    <column id="97" parent="13" name="id_pracownik">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="84" parent="13" name="badania">
+    <column id="98" parent="13" name="badania">
       <Position>2</Position>
       <DataType>timestamp|0</DataType>
     </column>
-    <key id="85" parent="13" name="PRIMARY">
+    <key id="99" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_pracownik</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="86" parent="13" name="fk_kucharka_pracownik1">
+    <foreign-key id="100" parent="13" name="fk_kucharka_pracownik1">
       <ColNames>id_pracownik</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>pracownik</RefTableName>
       <RefColNames>id_pracownik</RefColNames>
     </foreign-key>
-    <column id="87" parent="14" name="id_pracownik">
+    <column id="101" parent="14" name="id_pracownik">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="88" parent="14" name="stopien_zawodowy">
+    <column id="102" parent="14" name="stopien_zawodowy">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="89" parent="14" name="przedmiot">
+    <column id="103" parent="14" name="przedmiot">
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <key id="90" parent="14" name="PRIMARY">
+    <key id="104" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_pracownik</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="91" parent="14" name="fk_nauczyciel_pracownik1">
+    <foreign-key id="105" parent="14" name="fk_nauczyciel_pracownik1">
       <ColNames>id_pracownik</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>pracownik</RefTableName>
       <RefColNames>id_pracownik</RefColNames>
     </foreign-key>
-    <column id="92" parent="15" name="id_pracownik">
+    <column id="106" parent="15" name="id_pracownik">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="93" parent="15" name="id_grupa">
+    <column id="107" parent="15" name="id_grupa">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="94" parent="15" name="fk_nauczyciele_grupa1_idx">
+    <index id="108" parent="15" name="fk_nauczyciele_grupa1_idx">
       <ColNames>id_grupa</ColNames>
     </index>
-    <index id="95" parent="15" name="fk_nauczyciele_nauczyciel1_idx">
+    <index id="109" parent="15" name="fk_nauczyciele_nauczyciel1_idx">
       <ColNames>id_pracownik</ColNames>
     </index>
-    <key id="96" parent="15" name="PRIMARY">
+    <key id="110" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_pracownik
 id_grupa</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="97" parent="15" name="fk_nauczyciele_nauczyciel1">
+    <foreign-key id="111" parent="15" name="fk_nauczyciele_nauczyciel1">
       <ColNames>id_pracownik</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>nauczyciel</RefTableName>
       <RefColNames>id_pracownik</RefColNames>
     </foreign-key>
-    <foreign-key id="98" parent="15" name="fk_nauczyciele_grupa1">
+    <foreign-key id="112" parent="15" name="fk_nauczyciele_grupa1">
       <ColNames>id_grupa</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>grupa</RefTableName>
       <RefColNames>id_grupa</RefColNames>
     </foreign-key>
-    <column id="99" parent="16" name="id_dziecko">
+    <column id="113" parent="16" name="id_dziecko">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="100" parent="16" name="id_opiekun">
+    <column id="114" parent="16" name="id_opiekun">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="101" parent="16" name="id_opieka">
+    <column id="115" parent="16" name="id_opieka">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <index id="102" parent="16" name="fk_opieka_opiekun1_idx">
+    <index id="116" parent="16" name="fk_opieka_opiekun1_idx">
       <ColNames>id_opiekun</ColNames>
     </index>
-    <index id="103" parent="16" name="fk_opieka_dziecko1_idx">
+    <index id="117" parent="16" name="fk_opieka_dziecko1_idx">
       <ColNames>id_dziecko</ColNames>
     </index>
-    <key id="104" parent="16" name="PRIMARY">
+    <key id="118" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_opieka
 id_opiekun
 id_dziecko</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="105" parent="16" name="fk_opieka_dziecko1">
+    <foreign-key id="119" parent="16" name="fk_opieka_dziecko1">
       <ColNames>id_dziecko</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>dziecko</RefTableName>
       <RefColNames>id_dziecko</RefColNames>
     </foreign-key>
-    <column id="106" parent="17" name="id_opiekun">
+    <column id="120" parent="17" name="id_opiekun">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="107" parent="17" name="imie">
+    <column id="121" parent="17" name="imie">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="108" parent="17" name="nazwisko">
+    <column id="122" parent="17" name="nazwisko">
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="109" parent="17" name="miejscowosc">
+    <column id="123" parent="17" name="miejscowosc">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="110" parent="17" name="ulica">
+    <column id="124" parent="17" name="ulica">
       <Position>5</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="111" parent="17" name="dom">
+    <column id="125" parent="17" name="dom">
       <Position>6</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <key id="112" parent="17" name="PRIMARY">
+    <key id="126" parent="17" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_opiekun</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="113" parent="18" name="id_pracownik">
+    <column id="127" parent="18" name="id_pracownik">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="114" parent="18" name="specjalnosc">
+    <column id="128" parent="18" name="specjalnosc">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <key id="115" parent="18" name="PRIMARY">
+    <key id="129" parent="18" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_pracownik</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="116" parent="18" name="fk_opiekunka_pracownik1">
+    <foreign-key id="130" parent="18" name="fk_opiekunka_pracownik1">
       <ColNames>id_pracownik</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>pracownik</RefTableName>
       <RefColNames>id_pracownik</RefColNames>
     </foreign-key>
-    <column id="117" parent="19" name="id_pracownik">
+    <column id="131" parent="19" name="id_pracownik">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="118" parent="19" name="id_grupa">
+    <column id="132" parent="19" name="id_grupa">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="119" parent="19" name="fk_opiekunowie_grupa1_idx">
+    <index id="133" parent="19" name="fk_opiekunowie_grupa1_idx">
       <ColNames>id_grupa</ColNames>
     </index>
-    <key id="120" parent="19" name="PRIMARY">
+    <key id="134" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_pracownik
 id_grupa</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="121" parent="19" name="fk_opiekunowie_opiekunka1">
+    <foreign-key id="135" parent="19" name="fk_opiekunowie_opiekunka1">
       <ColNames>id_pracownik</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>opiekunka</RefTableName>
       <RefColNames>id_pracownik</RefColNames>
     </foreign-key>
-    <foreign-key id="122" parent="19" name="fk_opiekunowie_grupa1">
+    <foreign-key id="136" parent="19" name="fk_opiekunowie_grupa1">
       <ColNames>id_grupa</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>grupa</RefTableName>
       <RefColNames>id_grupa</RefColNames>
     </foreign-key>
-    <column id="123" parent="20" name="id_opłata">
+    <column id="137" parent="20" name="id_opłata">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="124" parent="20" name="data">
+    <column id="138" parent="20" name="data">
       <Position>2</Position>
       <DataType>timestamp|0</DataType>
     </column>
-    <column id="125" parent="20" name="wysokosc">
+    <column id="139" parent="20" name="wysokosc">
       <Position>3</Position>
       <DataType>double|0</DataType>
     </column>
-    <key id="126" parent="20" name="PRIMARY">
+    <key id="140" parent="20" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_opłata</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="127" parent="21" name="id_plan">
+    <column id="141" parent="21" name="id_plan">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="128" parent="21" name="id_dziecko">
+    <column id="142" parent="21" name="id_dziecko">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="129" parent="21" name="id_grupa">
+    <column id="143" parent="21" name="id_grupa">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="130" parent="21" name="fk_plan_grupa_dziecko1_idx">
+    <index id="144" parent="21" name="fk_plan_grupa_dziecko1_idx">
       <ColNames>id_dziecko</ColNames>
     </index>
-    <index id="131" parent="21" name="fk_plan_grupa_grupa1_idx">
+    <index id="145" parent="21" name="fk_plan_grupa_grupa1_idx">
       <ColNames>id_grupa</ColNames>
     </index>
-    <key id="132" parent="21" name="PRIMARY">
+    <key id="146" parent="21" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_plan
 id_dziecko
 id_grupa</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="133" parent="21" name="fk_plan_grupa_dziecko1">
+    <foreign-key id="147" parent="21" name="fk_plan_grupa_dziecko1">
       <ColNames>id_dziecko</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>dziecko</RefTableName>
       <RefColNames>id_dziecko</RefColNames>
     </foreign-key>
-    <column id="134" parent="22" name="id_plan_zajec">
+    <column id="148" parent="22" name="id_plan_zajec">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="135" parent="22" name="id_nauczyciel">
+    <column id="149" parent="22" name="id_nauczyciel">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="136" parent="22" name="id_zajecia">
+    <column id="150" parent="22" name="id_zajecia">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="137" parent="22" name="id_dziecko">
+    <column id="151" parent="22" name="id_dziecko">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="138" parent="22" name="fk_plan_zajec_dziecko1_idx">
+    <index id="152" parent="22" name="fk_plan_zajec_dziecko1_idx">
       <ColNames>id_dziecko</ColNames>
     </index>
-    <index id="139" parent="22" name="fk_plan_zajec_nauczyciel1_idx">
+    <index id="153" parent="22" name="fk_plan_zajec_nauczyciel1_idx">
       <ColNames>id_nauczyciel</ColNames>
     </index>
-    <index id="140" parent="22" name="fk_plan_zajec_zajecia dodatkowe1_idx">
+    <index id="154" parent="22" name="fk_plan_zajec_zajecia dodatkowe1_idx">
       <ColNames>id_zajecia</ColNames>
     </index>
-    <key id="141" parent="22" name="PRIMARY">
+    <key id="155" parent="22" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_plan_zajec
 id_nauczyciel
@@ -496,478 +538,551 @@ id_zajecia
 id_dziecko</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="142" parent="22" name="fk_plan_zajec_dziecko1">
+    <foreign-key id="156" parent="22" name="fk_plan_zajec_dziecko1">
       <ColNames>id_dziecko</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>dziecko</RefTableName>
       <RefColNames>id_dziecko</RefColNames>
     </foreign-key>
-    <column id="143" parent="23" name="id_pracownik">
+    <column id="157" parent="23" name="id_pracownik">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="144" parent="23" name="id_umowa">
+    <column id="158" parent="23" name="id_umowa">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="145" parent="23" name="fk_podpisuje_umowa1_idx">
+    <index id="159" parent="23" name="fk_podpisuje_umowa1_idx">
       <ColNames>id_umowa</ColNames>
     </index>
-    <key id="146" parent="23" name="PRIMARY">
+    <key id="160" parent="23" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_pracownik
 id_umowa</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="147" parent="23" name="fk_podpisuje_pracownik1">
+    <foreign-key id="161" parent="23" name="fk_podpisuje_pracownik1">
       <ColNames>id_pracownik</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>pracownik</RefTableName>
       <RefColNames>id_pracownik</RefColNames>
     </foreign-key>
-    <foreign-key id="148" parent="23" name="fk_podpisuje_umowa1">
+    <foreign-key id="162" parent="23" name="fk_podpisuje_umowa1">
       <ColNames>id_umowa</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>umowa</RefTableName>
       <RefColNames>id_umowa</RefColNames>
     </foreign-key>
-    <column id="149" parent="24" name="id_posiada">
+    <column id="163" parent="24" name="id_posiada">
       <Position>1</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="150" parent="24" name="id_stanowisko">
+    <column id="164" parent="24" name="id_stanowisko">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="151" parent="24" name="id_pracownik">
+    <column id="165" parent="24" name="id_pracownik">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="152" parent="24" name="fk_posiada_pracownik_ad1_idx">
+    <index id="166" parent="24" name="fk_posiada_pracownik_ad1_idx">
       <ColNames>id_pracownik</ColNames>
     </index>
-    <index id="153" parent="24" name="fk_posiada_stanowsika1_idx">
+    <index id="167" parent="24" name="fk_posiada_stanowsika1_idx">
       <ColNames>id_stanowisko</ColNames>
     </index>
-    <key id="154" parent="24" name="PRIMARY">
+    <key id="168" parent="24" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_posiada
 id_stanowisko
 id_pracownik</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="155" parent="24" name="fk_posiada_stanowsika1">
+    <foreign-key id="169" parent="24" name="fk_posiada_stanowsika1">
       <ColNames>id_stanowisko</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>stanowsika</RefTableName>
       <RefColNames>id_stanowisko</RefColNames>
     </foreign-key>
-    <column id="156" parent="25" name="id_pracownik">
+    <column id="170" parent="25" name="id_pracownik">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="157" parent="25" name="imie">
+    <column id="171" parent="25" name="imie">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="158" parent="25" name="nazwisko">
+    <column id="172" parent="25" name="nazwisko">
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <key id="159" parent="25" name="PRIMARY">
+    <column id="173" parent="25" name="stanowisko">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="174" parent="25" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_pracownik</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="160" parent="26" name="uprawnienia">
+    <column id="175" parent="26" name="uprawnienia">
       <Position>1</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="161" parent="26" name="id_pracownik">
+    <column id="176" parent="26" name="id_pracownik">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="162" parent="26" name="fk_pracownik_ad_pracownik1_idx">
+    <index id="177" parent="26" name="fk_pracownik_ad_pracownik1_idx">
       <ColNames>id_pracownik</ColNames>
     </index>
-    <key id="163" parent="26" name="PRIMARY">
+    <key id="178" parent="26" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_pracownik</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="164" parent="26" name="fk_pracownik_ad_pracownik1">
+    <foreign-key id="179" parent="26" name="fk_pracownik_ad_pracownik1">
       <ColNames>id_pracownik</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>pracownik</RefTableName>
       <RefColNames>id_pracownik</RefColNames>
     </foreign-key>
-    <column id="165" parent="27" name="id_pracownik">
+    <column id="180" parent="27" name="id_pracownik">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="166" parent="27" name="id_grupa">
+    <column id="181" parent="27" name="id_grupa">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="167" parent="27" name="fk_sprzataczka_grupa1_idx">
+    <index id="182" parent="27" name="fk_sprzataczka_grupa1_idx">
       <ColNames>id_grupa</ColNames>
     </index>
-    <key id="168" parent="27" name="PRIMARY">
+    <key id="183" parent="27" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_pracownik
 id_grupa</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="169" parent="27" name="fk_sprzataczka_pracownik1">
+    <foreign-key id="184" parent="27" name="fk_sprzataczka_pracownik1">
       <ColNames>id_pracownik</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>pracownik</RefTableName>
       <RefColNames>id_pracownik</RefColNames>
     </foreign-key>
-    <foreign-key id="170" parent="27" name="fk_sprzataczka_grupa1">
+    <foreign-key id="185" parent="27" name="fk_sprzataczka_grupa1">
       <ColNames>id_grupa</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>grupa</RefTableName>
       <RefColNames>id_grupa</RefColNames>
     </foreign-key>
-    <column id="171" parent="28" name="id_stanowisko">
+    <column id="186" parent="28" name="id_stanowisko">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="172" parent="28" name="nazwa">
+    <column id="187" parent="28" name="nazwa">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <key id="173" parent="28" name="PRIMARY">
+    <key id="188" parent="28" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_stanowisko</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="174" parent="29" name="id_opłata">
+    <column id="189" parent="29" name="id_opłata">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="175" parent="29" name="id_pracownik">
+    <column id="190" parent="29" name="id_pracownik">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="176" parent="29" name="id_opiekun">
+    <column id="191" parent="29" name="id_opiekun">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="177" parent="29" name="fk_uiszcza_opiekun1_idx">
+    <index id="192" parent="29" name="fk_uiszcza_opiekun1_idx">
       <ColNames>id_opiekun</ColNames>
     </index>
-    <index id="178" parent="29" name="fk_uiszcza_pracownik_ad1_idx">
+    <index id="193" parent="29" name="fk_uiszcza_pracownik_ad1_idx">
       <ColNames>id_pracownik</ColNames>
     </index>
-    <key id="179" parent="29" name="PRIMARY">
+    <key id="194" parent="29" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_opłata
 id_pracownik
 id_opiekun</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="180" parent="29" name="fk_uiszcza_opłata1">
+    <foreign-key id="195" parent="29" name="fk_uiszcza_opłata1">
       <ColNames>id_opłata</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>opłata</RefTableName>
       <RefColNames>id_opłata</RefColNames>
     </foreign-key>
-    <foreign-key id="181" parent="29" name="fk_uiszcza_pracownik_ad1">
+    <foreign-key id="196" parent="29" name="fk_uiszcza_pracownik_ad1">
       <ColNames>id_pracownik</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>pracownik_ad</RefTableName>
       <RefColNames>id_pracownik</RefColNames>
     </foreign-key>
-    <foreign-key id="182" parent="29" name="fk_uiszcza_opiekun1">
+    <foreign-key id="197" parent="29" name="fk_uiszcza_opiekun1">
       <ColNames>id_opiekun</ColNames>
       <RefSchemaName>przedszkole</RefSchemaName>
       <RefTableName>opiekun</RefTableName>
       <RefColNames>id_opiekun</RefColNames>
     </foreign-key>
-    <column id="183" parent="30" name="id_umowa">
+    <column id="198" parent="30" name="id_umowa">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="184" parent="30" name="type">
+    <column id="199" parent="30" name="type">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="185" parent="30" name="date">
+    <column id="200" parent="30" name="date">
       <Position>3</Position>
       <DataType>timestamp|0</DataType>
     </column>
-    <key id="186" parent="30" name="PRIMARY">
+    <key id="201" parent="30" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_umowa</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="187" parent="31" name="id_zajecia">
+    <column id="202" parent="31" name="id_zajecia">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="188" parent="31" name="przedmiot">
+    <column id="203" parent="31" name="przedmiot">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="189" parent="31" name="godzina">
+    <column id="204" parent="31" name="godzina">
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="190" parent="31" name="rok_szkolny">
+    <column id="205" parent="31" name="rok_szkolny">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="191" parent="31" name="dzien">
+    <column id="206" parent="31" name="dzien">
       <Position>5</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="192" parent="31" name="id_pracownika">
+    <column id="207" parent="31" name="id_pracownika">
       <Position>6</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <key id="193" parent="31" name="PRIMARY">
+    <key id="208" parent="31" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_zajecia</ColNames>
       <Primary>1</Primary>
     </key>
-    <argument id="194" parent="32" name="id">
+    <argument id="209" parent="32" name="id">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="195" parent="33" name="wynik">
+    <argument id="210" parent="33" name="wynik">
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>varchar(30)|0</DataType>
     </argument>
-    <argument id="196" parent="34" name="id">
+    <argument id="211" parent="34" name="id">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="197" parent="34" name="imie">
+    <argument id="212" parent="34" name="imie">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="198" parent="34" name="nazwisko">
+    <argument id="213" parent="34" name="nazwisko">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="199" parent="34" name="miejscowosc">
+    <argument id="214" parent="34" name="miejscowosc">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="200" parent="34" name="ulica">
+    <argument id="215" parent="34" name="ulica">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="201" parent="34" name="dom">
+    <argument id="216" parent="34" name="dom">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="202" parent="35" name="imie">
+    <argument id="217" parent="35" name="imie">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="203" parent="35" name="nazwisko">
+    <argument id="218" parent="35" name="nazwisko">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="204" parent="35" name="miejscowosc">
+    <argument id="219" parent="35" name="miejscowosc">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="205" parent="35" name="ulica">
+    <argument id="220" parent="35" name="ulica">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="206" parent="35" name="dom">
+    <argument id="221" parent="35" name="dom">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="207" parent="36" name="kat">
+    <argument id="222" parent="36" name="kat">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="208" parent="36" name="sala">
+    <argument id="223" parent="36" name="sala">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="209" parent="36" name="rok">
+    <argument id="224" parent="36" name="rok">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="210" parent="37" name="ID">
+    <argument id="225" parent="37" name="ID">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="211" parent="37" name="kat">
+    <argument id="226" parent="37" name="kat">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="212" parent="37" name="sala">
+    <argument id="227" parent="37" name="sala">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="213" parent="37" name="rok">
+    <argument id="228" parent="37" name="rok">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="214" parent="39" name="imie">
+    <argument id="229" parent="39" name="imie">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="215" parent="39" name="nazwisko">
+    <argument id="230" parent="39" name="nazwisko">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="216" parent="41" name="id">
-      <DataType>int(11)|0</DataType>
-    </argument>
-    <argument id="217" parent="42" name="przedmiot">
+    <argument id="231" parent="39" name="stanowisko">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="218" parent="42" name="godzina">
+    <argument id="232" parent="41" name="id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="233" parent="42" name="przedmiot">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="219" parent="42" name="rok">
+    <argument id="234" parent="42" name="godzina">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="220" parent="44" name="id">
-      <DataType>int(11)|0</DataType>
-    </argument>
-    <argument id="221" parent="45" name="id">
-      <DataType>int(11)|0</DataType>
-    </argument>
-    <argument id="222" parent="45" name="imie">
+    <argument id="235" parent="42" name="rok">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="223" parent="45" name="nazwisko">
+    <argument id="236" parent="44" name="id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="237" parent="45" name="id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="238" parent="45" name="imie">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="224" parent="46" name="id">
-      <DataType>int(11)|0</DataType>
-    </argument>
-    <argument id="225" parent="46" name="przedmiot">
+    <argument id="239" parent="45" name="nazwisko">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="226" parent="46" name="godzina">
+    <argument id="240" parent="46" name="id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="241" parent="46" name="przedmiot">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="227" parent="46" name="rok">
+    <argument id="242" parent="46" name="godzina">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="228" parent="48" name="id">
-      <DataType>int(11)|0</DataType>
-    </argument>
-    <argument id="229" parent="49" name="id">
-      <DataType>int(11)|0</DataType>
-    </argument>
-    <argument id="230" parent="50" name="id">
-      <DataType>int(11)|0</DataType>
-    </argument>
-    <argument id="231" parent="51" name="imie">
+    <argument id="243" parent="46" name="rok">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="232" parent="51" name="nazwisko">
+    <argument id="244" parent="48" name="id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="245" parent="49" name="id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="246" parent="50" name="id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="247" parent="51" name="imie">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="233" parent="51" name="miejscowosc">
+    <argument id="248" parent="51" name="nazwisko">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="234" parent="51" name="ulica">
+    <argument id="249" parent="51" name="miejscowosc">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="235" parent="51" name="dom">
+    <argument id="250" parent="51" name="ulica">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="236" parent="52" name="id">
-      <DataType>int(11)|0</DataType>
-    </argument>
-    <argument id="237" parent="53" name="id">
-      <DataType>int(11)|0</DataType>
-    </argument>
-    <argument id="238" parent="54" name="idChild">
-      <DataType>int(11)|0</DataType>
-    </argument>
-    <argument id="239" parent="54" name="idKeeper">
-      <DataType>int(11)|0</DataType>
-    </argument>
-    <argument id="240" parent="55" name="imiep">
+    <argument id="251" parent="51" name="dom">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="241" parent="55" name="nazwiskop">
+    <argument id="252" parent="52" name="id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="253" parent="53" name="id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="254" parent="54" name="idChild">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="255" parent="54" name="idKeeper">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="256" parent="55" name="imiep">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="242" parent="55" name="miejscowoscp">
+    <argument id="257" parent="55" name="nazwiskop">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="243" parent="55" name="ulicap">
+    <argument id="258" parent="55" name="miejscowoscp">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="244" parent="55" name="domp">
+    <argument id="259" parent="55" name="ulicap">
       <DataType>varchar(45)|0</DataType>
     </argument>
-    <argument id="245" parent="56" name="id">
+    <argument id="260" parent="55" name="domp">
+      <DataType>varchar(45)|0</DataType>
+    </argument>
+    <argument id="261" parent="56" name="id">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="246" parent="57" name="id">
+    <argument id="262" parent="57" name="id">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="247" parent="57" name="id_child">
+    <argument id="263" parent="57" name="id_child">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="248" parent="58" name="idC">
+    <argument id="264" parent="58" name="idC">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="249" parent="58" name="idG">
+    <argument id="265" parent="58" name="idG">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="250" parent="59" name="idC">
+    <argument id="266" parent="59" name="idC">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="251" parent="59" name="idZ">
+    <argument id="267" parent="59" name="idZ">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="252" parent="60" name="idChild">
+    <argument id="268" parent="60" name="idChild">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="253" parent="60" name="idGrupa">
+    <argument id="269" parent="60" name="idGrupa">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="254" parent="61" name="idChild">
+    <argument id="270" parent="61" name="idChild">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="255" parent="61" name="idN">
+    <argument id="271" parent="61" name="idN">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="256" parent="61" name="idGrupa">
+    <argument id="272" parent="61" name="idGrupa">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="257" parent="62" name="id">
+    <argument id="273" parent="62" name="id">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="258" parent="63" name="idZ">
+    <argument id="274" parent="63" name="idZ">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="259" parent="64" name="id">
+    <argument id="275" parent="64" name="id">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="260" parent="65" name="idZ">
+    <argument id="276" parent="65" name="idZ">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="261" parent="66" name="idG">
+    <argument id="277" parent="66" name="idG">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="262" parent="67" name="idC">
+    <argument id="278" parent="67" name="idC">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="263" parent="67" name="idG">
+    <argument id="279" parent="67" name="idG">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="264" parent="68" name="idG">
+    <argument id="280" parent="68" name="idG">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="265" parent="69" name="idG">
+    <argument id="281" parent="69" name="idG">
       <DataType>int(11)|0</DataType>
     </argument>
-    <argument id="266" parent="70" name="idG">
+    <argument id="282" parent="70" name="idG">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="283" parent="71" name="idP">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="284" parent="71" name="badania">
+      <DataType>timestamp|0</DataType>
+    </argument>
+    <argument id="285" parent="72" name="idP">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="286" parent="72" name="stopien">
+      <DataType>varchar(45)|0</DataType>
+    </argument>
+    <argument id="287" parent="72" name="przedmiot">
+      <DataType>varchar(45)|0</DataType>
+    </argument>
+    <argument id="288" parent="73" name="idP">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="289" parent="73" name="specjalnosc">
+      <DataType>varchar(45)|0</DataType>
+    </argument>
+    <argument id="290" parent="74" name="idP">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="291" parent="74" name="idU">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="292" parent="75" name="idP">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="293" parent="76" name="type_p">
+      <DataType>varchar(45)|0</DataType>
+    </argument>
+    <argument id="294" parent="76" name="date_p">
+      <DataType>timestamp|0</DataType>
+    </argument>
+    <argument id="295" parent="77" name="id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="296" parent="78" name="idP">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="297" parent="79" name="id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="298" parent="80" name="id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="299" parent="81" name="idP">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="300" parent="82" name="imie">
+      <DataType>varchar(45)|0</DataType>
+    </argument>
+    <argument id="301" parent="82" name="nazwisko">
+      <DataType>varchar(45)|0</DataType>
+    </argument>
+    <argument id="302" parent="83" name="type_p">
+      <DataType>varchar(45)|0</DataType>
+    </argument>
+    <argument id="303" parent="83" name="date_p">
+      <DataType>timestamp|0</DataType>
+    </argument>
+    <argument id="304" parent="84" name="id_p">
       <DataType>int(11)|0</DataType>
     </argument>
   </database-model>
